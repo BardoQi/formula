@@ -28,6 +28,12 @@ class Formula
             $right_idx = strpos($exp,')',true);
             $right_exp = substr($exp,$right_idx+1);
             $mid_exp = substr($exp,0,$right_idx);
+            if (is_numeric(substr($left_exp,-1))) {
+                $left_exp .= '*';
+            }
+            if (is_numeric(substr($right_exp,0,1))) {
+                $right_exp = '*'.$right_exp;
+            }
             return $this->calc($left_exp.$this->calc($mid_exp).$right_exp);
         } else {//+-*/
             $m = [];
@@ -71,6 +77,9 @@ $calexp = 'Perimeter*0.3-0.5*(WindowAndDoorArea+GroundArea)';
 $row['Perimeter']=5;
 $row['WindowAndDoorArea']=2;
 $row['GroundArea']=4;
+
+$calexp = '2(5)3';
+$row = [];
 
 $ret = (new Formula())->handle($calexp,$row);
 var_dump($ret);
