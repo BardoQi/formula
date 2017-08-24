@@ -71,15 +71,3 @@ class Formula
         }    
     }
 }
-
-
-// $calexp = 'Perimeter*0.3-0.5*(WindowAndDoorArea+GroundArea)';
-// $row['Perimeter']=5;
-// $row['WindowAndDoorArea']=2;
-// $row['GroundArea']=4;
-
-// $calexp = '2(5)3';
-// $row = [];
-
-// $ret = (new Formula())->handle($calexp,$row);
-// var_dump($ret);
