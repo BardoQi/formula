@@ -1,7 +1,5 @@
 <?php
-include 'Formula.php';
-
-class test extends PHPUnit_Framework_TestCase
+class FormulaTest extends PHPUnit_Framework_TestCase
 {
     public function testFormula()
     {
